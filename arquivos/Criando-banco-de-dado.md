@@ -29,3 +29,13 @@ CREATE TABLE alunos (
     curso_id INT NOT NULL
 );
 ```	
+
+<!-- Realizando cadastro -->
+
+    #### Cadastrando cursos
+
+    ```sql
+    INSERT INTO cursos (titulo, carga_horaria, professor_id)
+    VALUES ('Front-End', 40, 1),
+           ('Back-End', 80, 2),
+    ```
