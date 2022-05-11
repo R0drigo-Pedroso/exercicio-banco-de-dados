@@ -70,3 +70,22 @@ CREATE TABLE alunos (
     ('Neil Peart', "Design", 23),
     ('Ozzy Osbourne', "Design", 24),
     ('David Gilmour', "Infra", 25);
+
+
+   
+    -- Criando comando de consulta
+
+-- alunos e nascimento antes 2009
+1) Faça uma consulta que mostre os alunos que nasceram antes do ano 2009
+
+    SELECT * FROM alunos WHERE data_nascimento < '2009-01-01';
+
+    [![An old rock in the desert](modelagem-banco.png "Shiprock, New Mexico by Beau Rogers")]
+
+2) Faça uma consulta que calcule a média das notas de cada aluno e as mostre com duas casas decimais.
+
+    SELECT nome, ROUND(AVG(nota1 + nota2), 2) FROM alunos GROUP BY nome;
+
+3) Faça uma consulta que calcule o limite de faltas de cada curso de acordo com a carga horária. Considere o limite como 25% da carga horária. Classifique em ordem crescente pelo título do curso.
+
+    SELECT titulo, carga_horaria, ROUND(carga_horaria * 0.25) FROM cursos ORDER BY titulo;
