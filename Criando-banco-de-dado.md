@@ -80,12 +80,34 @@ CREATE TABLE alunos (
 
     SELECT * FROM alunos WHERE data_nascimento < '2009-01-01';
 
-    [![An old rock in the desert](modelagem-banco.png "Shiprock, New Mexico by Beau Rogers")]
+    ![](imagens/menores%202009.png)
+
 
 2) Faça uma consulta que calcule a média das notas de cada aluno e as mostre com duas casas decimais.
 
-    SELECT nome, ROUND(AVG(nota1 + nota2), 2) FROM alunos GROUP BY nome;
+    SELECT nome, ROUND(AVG(nota1 + nota2)/2, 2) AS "Médias" FROM alunos GROUP BY nome;
+
+    ![](imagens/medias-alunos.png)
 
 3) Faça uma consulta que calcule o limite de faltas de cada curso de acordo com a carga horária. Considere o limite como 25% da carga horária. Classifique em ordem crescente pelo título do curso.
 
-    SELECT titulo, carga_horaria, ROUND(carga_horaria * 0.25) FROM cursos ORDER BY titulo;
+    SELECT titulo, carga_horaria, ROUND(carga_horaria * 0.25) AS "limite de faltas" FROM cursos ORDER BY titulo DESC;
+
+    ![](imagens/ordem-desc.png  "Ordem decrescente")
+
+
+4) Faça uma consulta que mostre os nomes somente dos professores da área de desenvolvimento.
+
+    SELECT nome FROM professores WHERE area_atuacao ="Desenvolvimento";
+
+    ![](imagens/nome-professor.png)
+
+5) Faça uma consulta que mostre a quantidade de professores por área de desenvolvimento.
+
+    SELECT area_atuacao, COUNT(*) AS "Quantidade" FROM professores GROUP BY area_atuacao;
+
+    ![](imagens/quantidade-area-atuacao.png)
+
+6) Faça uma consulta que mostre o nome dos alunos, o título e a carga horária dos cursos que fazem.
+
+    SELECT alunos.nome, cursos.titulo, cursos.carga_horaria FROM alunos INNER JOIN cursos ON alunos.curso_id = cursos.id;
