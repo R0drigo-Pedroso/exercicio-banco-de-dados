@@ -90,9 +90,10 @@ CREATE TABLE alunos (
     ![](imagens/medias-alunos.png)
 
 3) Faça uma consulta que calcule o limite de faltas de cada curso de acordo com a carga horária. Considere o limite como 25% da carga horária. Classifique em ordem crescente pelo título do curso.
+
 ```sql	
     SELECT titulo, carga_horaria, ROUND(carga_horaria * 0.25) AS "limite de faltas" FROM cursos ORDER BY titulo DESC;
-```	
+```
     ![](imagens/ordem-desc.png  "Ordem decrescente")
 
 
@@ -143,5 +144,5 @@ CREATE TABLE alunos (
 11) Faça uma consulta que altere o nome do curso de Figma para Adobe XD e sua carga horária de 10 para 15.
     
     ```sql
-    UPDATE cursos SET carga_horaria = 15 WHERE titulo = "Adobe XD";
+    UPDATE cursos SET TITULO = "Adobe XD" WHERE id = 24;
     ```
