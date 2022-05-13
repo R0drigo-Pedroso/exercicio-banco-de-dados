@@ -174,17 +174,17 @@ CREATE TABLE alunos (
 2) Criar uma consulta que calcule a média das notas de cada aluno e mostre somente os alunos que tiveram a média.
 
     ```sql
-    SELECT nome, ROUND(AVG(nota1 + nota2)/2, 2) AS "Média" FROM alunos GROUP BY nome HAVING "Média" > 7;
+    SELECT nome, ROUND(AVG(nota1 + nota2)/2, 2) AS "Média" FROM alunos GROUP BY nome HAVING Média > 7;
     ```
 
 3) Criar uma consulta que calcule a média das notas de cada aluno e mostre somente os alunos que tiveram a média.
 
     ```sql
-    SELECT nome, ROUND(AVG(nota1 + nota2)/2, 2) AS "Média" FROM alunos GROUP BY nome HAVING "Média" < 7;
+    SELECT nome, ROUND(AVG(nota1 + nota2)/2, 2) AS "Média" FROM alunos GROUP BY nome HAVING Média < 7;
     ```
 
 4) Criar uma consulta que mostre a quantidade de alunos com média.
 
     ```sql
-    SELECT COUNT(*) AS "Quantidade" FROM alunos GROUP BY nome HAVING "Média" > 7;
-    ```
+    SELECT alunos COUNT(*) AS "Quantidade" FROM alunos GROUP BY nome HAVING Média > 7;
+     ```
