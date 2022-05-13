@@ -145,15 +145,18 @@ CREATE TABLE alunos (
     ```sql
     UPDATE cursos SET TITULO = "Adobe XD" WHERE id = 24;
     ```
+![](imagens/delete.png)
 
 12) Faça uma consulta que exclua um aluno do curso de Redes de Computadores e um aluno do curso de UX/UI.
 
     ```sql
-    DELETE FROM alunos WHERE curso_id = 1 OR curso_id = 2;
+    DELETE FROM alunos WHERE id = 4 OR id = 6;
     ```
+![](imagens/deleta-aluno.png)
 
 13) Faça uma consulta que mostre a lista de alunos atualizada e o título dos cursos que fazem, classificados pelo nome do aluno.
 
     ```sql
     SELECT alunos.nome, cursos.titulo FROM alunos INNER JOIN cursos ON alunos.curso_id = cursos.id ORDER BY alunos.nome;
     ```
+![](imagens/lista-atualizada.png)
