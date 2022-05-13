@@ -160,3 +160,25 @@ CREATE TABLE alunos (
     SELECT alunos.nome, cursos.titulo FROM alunos INNER JOIN cursos ON alunos.curso_id = cursos.id ORDER BY alunos.nome;
     ```
 ![](imagens/lista-atualizada.png)
+
+
+
+##DESAFIOS
+
+1) Criar uma consulta que calcule a idade do aluno.
+
+    ```sql
+    SELECT nome, ROUND(DATEDIFF(CURDATE(), data_nascimento)/365) AS "Idade" FROM alunos;
+    ```
+
+2) Criar uma consulta que calcule a média das notas de cada aluno e mostre somente os alunos que tiveram a média.
+
+    ```sql
+    SELECT nome, ROUND(AVG(nota1 + nota2)/2, 2) AS "Média" FROM alunos GROUP BY nome HAVING "Média" > 7;
+    ```
+
+3) Criar uma consulta que calcule a média das notas de cada aluno e mostre somente os alunos que tiveram a média.
+
+    ```sql
+    SELECT nome, ROUND(AVG(nota1 + nota2)/2, 2) AS "Média" FROM alunos GROUP BY nome HAVING "Média" < 7;
+    ```
